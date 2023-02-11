@@ -1,3 +1,7 @@
+
+
+// webapck 编译的入口文件
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
