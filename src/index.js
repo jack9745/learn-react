@@ -7,11 +7,35 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createBrowserRouter,RouterProvider} from "react-router-dom"
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+// 添加路由
+const router = createBrowserRouter(
+  [
+    {
+      path:"/helloWorld",
+      element:<div>helloWorld</div>
+    },
+    {
+      path:'/',
+      element:<App></App>
+    },
+    {path:"/shopList",
+    element:<div>这是购物车页面</div>
+  }
+  ]
+)
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}>
+      <App></App>
+    </RouterProvider>
+    
+    {/* <App /> */}
   </React.StrictMode>
 );
 
