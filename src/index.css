@@ -24,3 +24,13 @@ li {
   margin: 0;
   padding: 0;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
