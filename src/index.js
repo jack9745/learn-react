@@ -7,6 +7,9 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import ShopList from './views/shopList'
 import Test from './views/test'
+import Table from './views/table'
+import Form from './views/form'
+import State from './views/state'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
@@ -23,6 +26,9 @@ const router = createBrowserRouter([
   },
   { path: '/shopList', element: <ShopList></ShopList> },
   { path: '/test', element: <Test></Test> },
+  { path: '/table', element: <Table></Table> },
+  { path: '/form', element: <Form></Form> },
+  { path: '/state', element: <State></State> },
 ])
 root.render(
   <React.StrictMode>
