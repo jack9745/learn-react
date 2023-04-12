@@ -40,6 +40,7 @@ export default function Index() {
           filterText={filterText}
           onlyStock={onlyStock}
         ></ProductTable>
+
       </div>
     </div>
   )
