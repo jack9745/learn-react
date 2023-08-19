@@ -68,9 +68,17 @@ export default function LearnObject() {
   const changeName = (event) => {
     console.log(event)
     // 为什么这样就会报错呢？官网上好像也没有介绍 为什么不能这样做
+
+    // 回过头来看了一下 ，如果只传入需要变化的值，那么其他的值没有传入，react是读取不到，然后渲染的时候可能读取不到，
+    // 比如说 formData.user就是undefind ,然后读取weight就报错了
+    // 所以要更新state 中的对象，要传入一个新的对象，
+
+    // 这是错误的写法
     // setFormData({
     //   name: event.target.value,
     // })
+
+    // 这是正确的写法
     setFormData({
       ...formData,
       name: event.target.value,

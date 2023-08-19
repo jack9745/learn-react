@@ -1,5 +1,19 @@
 import React, { useState } from 'react'
 
+const list = [
+  {
+    name: 'jack',
+    age: 12,
+  },
+]
+
+const newList = [...list]
+
+// 我们可以看到 新的数组和旧的数组 第一个成员指向的是同一个对象，
+// 展开运算符不是深拷贝，而是浅拷贝
+newList[0].name = 'huangtao'
+console.log(list[0].name) //huangtao
+
 // 学习更新数组类型的状态数据
 
 // 数组类型的值 在js 中也是可以变化的，
@@ -45,6 +59,7 @@ export default function LearnArray() {
   // 从数组中移除某一项元素
 
   const deleteElement = (index) => {
+    // 这里生成了一个新的list
     const list = todoList.filter((kItem, kIndex) => {
       return index !== kIndex
     })
@@ -57,6 +72,7 @@ export default function LearnArray() {
     // 我的理解：操作一个数组之前，先用原来的状态数组生成一个先的变量，然后再在操作这个新的变量
     // 这一点非常重要
 
+    // list 是一个新的数组，
     const list = [...todoList]
     list.reverse()
     setTodoList(list)
@@ -72,7 +88,7 @@ export default function LearnArray() {
     // newItem.value = '这是一个新值'
     // newItem和list 没有产生联系  这种方法在逻辑上不可取，如果业务复杂，逻辑会更复杂
 
-    //
+    // list是新
     const list = todoList.map((item) => {
       if (item.id === id) {
         return { ...item, value: '这是一个新值' }

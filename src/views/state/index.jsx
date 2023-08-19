@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import LearnObject from './Object'
 import LearnArray from './Array'
+
+import Manage from './Manage'
+
+import UseReducer from './UseReducer'
 // 学习状态管理 更新对象类型 ，数组类型的状态数据
 
 /**
@@ -111,32 +115,43 @@ export default function Index() {
     }, 2000)
   }
   return (
-    <div style={{ marginTop: '10px' }}>
-      <Button
-        type="primary"
-        onClick={handleClick}
-        style={{ marginRight: '10px' }}
-      >
-        button
-      </Button>
+    <div className="parent" style={{ display: 'flex' }}>
+      <div className="left" style={{ marginTop: '10px' }}>
+        <Button
+          type="primary"
+          onClick={handleClick}
+          style={{ marginRight: '10px' }}
+        >
+          button
+        </Button>
 
-      <Button
-        type="primary"
-        onClick={handleClickOne}
-        style={{ marginRight: '10px' }}
-      >
-        另外一个按钮
-      </Button>
+        <Button
+          type="primary"
+          onClick={handleClickOne}
+          style={{ marginRight: '10px' }}
+        >
+          另外一个按钮
+        </Button>
 
-      <Button type="primary" onClick={handleClickTwo}>
-        测试一下快照
-      </Button>
+        <Button type="primary" onClick={handleClickTwo}>
+          测试一下快照
+        </Button>
 
-      <div>count的值是多少呢{count}</div>
+        <div>count的值是多少呢{count}</div>
 
-      <div style={{ marginTop: '30px' }}>
-        <LearnObject></LearnObject>
-        <LearnArray></LearnArray>
+        <div style={{ marginTop: '30px' }}>
+          <LearnObject></LearnObject>
+          <LearnArray></LearnArray>
+        </div>
+      </div>
+
+      {/*  */}
+      <div className="right">
+        <Manage></Manage>
+      </div>
+
+      <div>
+        <UseReducer></UseReducer>
       </div>
     </div>
   )

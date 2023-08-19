@@ -1,3 +1,5 @@
 import React from 'react'
 
-console.log('这是home文件')
+export default function Home() {
+  return <div></div>
+}
