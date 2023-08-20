@@ -124,18 +124,22 @@ export default function UseReducer() {
               >
                 删除
               </button>
-              <button
+
+              {!item.edit ?  <button
                 style={{ marginRight: '10px' }}
                 onClick={() => edit(item.id)}
               >
                 编辑
               </button>
+              : 
               <button
                 style={{ marginRight: '10px' }}
                 onClick={() => save(item.id)}
               >
                 保存
-              </button>
+              </button>}
+            
+             
             </div>
           )
         })}

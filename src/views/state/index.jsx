@@ -5,6 +5,8 @@ import LearnArray from './Array'
 import Manage from './Manage'
 
 import UseReducer from './UseReducer'
+
+import UseContext from "./UseContext"
 // 学习状态管理 更新对象类型 ，数组类型的状态数据
 
 /**
@@ -115,8 +117,11 @@ export default function Index() {
     }, 2000)
   }
   return (
-    <div className="parent" style={{ display: 'flex' }}>
-      <div className="left" style={{ marginTop: '10px' }}>
+    <div className="parent" style={{ display: 'flex',flexDirection:'row' }}>
+
+      {/* 为什么它们的高度是一样高 ？？ 不应该是根据高度自适应吗？？ */}
+      <div className="left" style={{margin:'10px',padding:'10px',border:'1px solid #ccc'}}>
+        {/* <div style={{height:'200px'}}></div> */}
         <Button
           type="primary"
           onClick={handleClick}
@@ -146,12 +151,15 @@ export default function Index() {
       </div>
 
       {/*  */}
-      <div className="right">
+      <div className="right" style={{margin:'10px',padding:'10px',border:'1px solid #ccc'}}>
         <Manage></Manage>
       </div>
 
-      <div>
+      <div style={{margin:'10px',padding:'10px',border:'1px solid #ccc'}}>
         <UseReducer></UseReducer>
+      </div>
+      <div style={{margin:'10px',padding:'10px',border:'1px solid #ccc'}}>
+       <UseContext></UseContext>
       </div>
     </div>
   )
