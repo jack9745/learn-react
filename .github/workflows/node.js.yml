@@ -29,3 +29,14 @@ jobs:
     - run: npm ci
     - run: CI=false npm run build --if-present
     - run: npm test
+
+     # ===== 新增：上传构建产物 =====
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+          # 给这个产物起个名字
+          name: react-app-build
+          # 指定要上传的文件夹路径，通常是构建输出目录
+          path: build/
+          # 可选：设置保留天数，默认90天
+          retention-days: 30
